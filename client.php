@@ -1,16 +1,16 @@
 <?php
 
-use Lisachenko\Protocol\FCGI;
-use Lisachenko\Protocol\FCGI\FrameParser;
-use Lisachenko\Protocol\FCGI\Record;
-use Lisachenko\Protocol\FCGI\Record\BeginRequest;
-use Lisachenko\Protocol\FCGI\Record\Params;
-use Lisachenko\Protocol\FCGI\Record\Stdin;
+use Protocol\FCGI;
+use Protocol\FCGI\FrameParser;
+use Protocol\FCGI\Record;
+use Protocol\FCGI\Record\BeginRequest;
+use Protocol\FCGI\Record\Params;
+use Protocol\FCGI\Record\Stdin;
 
 include "vendor/autoload.php";
 
 // Let's connect to the local php-fpm daemon directly
-$phpSocket = fsockopen('127.0.0.1', 9001, $errorNumber, $errorString);
+$phpSocket = fsockopen('127.0.0.1', 20477, $errorNumber, $errorString);
 $packet    = '';
 
 // Prepare our sequence for querying PHP file
