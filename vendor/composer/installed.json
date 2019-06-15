@@ -1,0 +1,48 @@
+[
+    {
+        "name": "lisachenko/protocol-fcgi",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lisachenko/protocol-fcgi.git",
+            "reference": "09451e98bdc2906592eb6ca244ca76302057d854"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lisachenko/protocol-fcgi/zipball/09451e98bdc2906592eb6ca244ca76302057d854",
+            "reference": "09451e98bdc2906592eb6ca244ca76302057d854",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-12-05T18:17:07+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Protocol\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexander Lisachenko",
+                "email": "lisachenko.it@gmail.com"
+            }
+        ],
+        "description": "Implementation of FCGI Protocol in PHP"
+    }
+]
