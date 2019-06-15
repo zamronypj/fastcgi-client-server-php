@@ -14,8 +14,13 @@ $phpSocket = fsockopen('127.0.0.1', 20477, $errorNumber, $errorString);
 $packet    = '';
 
 // Prepare our sequence for querying PHP file
-$packet .= new BeginRequest(FCGI::RESPONDER);;
-$packet .= new Params(['SCRIPT_FILENAME' => '/var/www/some_file.php']);
+$packet .= new BeginRequest(FCGI::RESPONDER);
+$packet .= new Params([
+    'SCRIPT_FILENAME' => '/var/www/some_file.php',
+    'REQUEST_URI' => '/assa/asdads',
+    'REQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URIREQUEST_URI' => '/assa/asdads',
+]);
+$packet .= new Params(['REQUEST_METHOD' => 'GET']);
 $packet .= new Params();
 $packet .= new Stdin();
 
