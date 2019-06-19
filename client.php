@@ -15,10 +15,16 @@ if (count($argv) < 2) {
 }
 
 $hostName = $argv[0];
-$port = $argv[1];
+$port = (int) $argv[1];
 
 //Open connection to a FastCGI server
-$phpSocket = fsockopen($hostName, $port, $errorNumber, $errorString);
+$phpSocket = @fsockopen($hostName, $port, $errorNumber, $errorString);
+
+if (!$phpSocket) {
+    echo "$errorString [$errorNumber]\n";
+    die();
+}
+
 $packet    = '';
 
 // Prepare our sequence for querying PHP file
@@ -48,7 +54,7 @@ while ($partialData = fread($phpSocket, 4096)) {
     $response .= $partialData;
     while (FrameParser::hasFrame($response)) {
         $record = FrameParser::parseFrame($response);
-        var_dump($record);
+        echo $record;
     };
 };
 
