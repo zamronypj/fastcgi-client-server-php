@@ -14,8 +14,10 @@ if (count($argv) < 2) {
     die();
 }
 
-$hostName = $argv[0];
-$port = (int) $argv[1];
+$hostName = $argv[1];
+$port = (int) $argv[2];
+
+echo "Sending request to $hostName:$port ...\n";
 
 //Open connection to a FastCGI server
 $phpSocket = @fsockopen($hostName, $port, $errorNumber, $errorString);
