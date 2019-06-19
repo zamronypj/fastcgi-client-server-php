@@ -25,10 +25,19 @@ $packet    = '';
 $packet .= new BeginRequest(FCGI::RESPONDER);
 $packet .= new Params([
     'SCRIPT_FILENAME' => '/var/www/some_file.php',
-    'REMOTE_ADDR' => '127.0.0.1',
+    'SCRIPT_NAME' => 'some_file.php',
+    'REMOTE_ADDR' => '192.168.2.1',
+    'REMOTE_PORT' => '20797',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '20797',
     'REQUEST_URI' => '/',
+    'QUERY_STRING' => 'test=ok&value=nice',
+    'HTTP_USER_AGENT' => 'PHP fcgi client',
 ]);
 $packet .= new Params(['REQUEST_METHOD' => 'GET']);
+$packet .= new Params(['DOCUMENT_ROOT' => 'public']);
+$packet .= new Params(['REQUEST_SCHEME' => 'http']);
+$packet .= new Params(['CONTENT_TYPE' => 'text/html']);
 $packet .= new Params();
 $packet .= new Stdin();
 
