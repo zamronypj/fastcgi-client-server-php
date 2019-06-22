@@ -56,7 +56,7 @@ while ($partialData = fread($phpSocket, 4096)) {
     $response .= $partialData;
     while (FrameParser::hasFrame($response)) {
         $record = FrameParser::parseFrame($response);
-        echo $record;
+        var_dump($record);
     };
 };
 
